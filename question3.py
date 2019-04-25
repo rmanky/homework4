@@ -50,7 +50,5 @@ while Q:
             break
 
         for OCOST, OTHER in GRAPH.get(CURR, ()):
-            print(OTHER)
-            print(VISITED)
             nxt = COST + OCOST
             hq.heappush(Q, (nxt, OTHER, PATH))
