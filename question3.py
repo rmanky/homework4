@@ -51,8 +51,4 @@ while Q:
 
         for OCOST, OTHER in GRAPH.get(CURR, ()):
             nxt = -abs(COST * OCOST)
-            print(CURR, OTHER)
-            print(nxt, OTHER, PATH)
-            print(COST)
-            print(OCOST)
             hq.heappush(Q, (nxt, OTHER, PATH))
