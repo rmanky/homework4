@@ -29,7 +29,7 @@ GRAPH = defaultdict(list)
 for s, e, r in LIST:
     GRAPH[s].append((r, e))
 
-Q, VISITED = [(0, START, ())], set()
+Q, VISITED = [(1, START, ())], set()
 while Q:
     (COST, CURR, PATH) = hq.heappop(Q)
     if CURR not in VISITED:
@@ -50,5 +50,9 @@ while Q:
             break
 
         for OCOST, OTHER in GRAPH.get(CURR, ()):
-            nxt = COST + OCOST
+            nxt = -abs(COST * OCOST)
+            print(CURR, OTHER)
+            print(nxt, OTHER, PATH)
+            print(COST)
+            print(OCOST)
             hq.heappush(Q, (nxt, OTHER, PATH))
